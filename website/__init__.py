@@ -18,7 +18,7 @@ def create_app():
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
-    if not path.exists('instance/' + DB_NAME):
+    if not path.exists('website/' + DB_NAME):
         with app.app_context():
             from .models import User, Note
             db.create_all()
